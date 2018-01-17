@@ -1,0 +1,25 @@
+<?php
+namespace DummyNamespace;
+
+use Fer\Admin\Translator\TranslatableInterface;
+use Fer\Admin\Translator\Eloquent\HasTranslations;
+use Illuminate\Database\Eloquent\Model;
+
+class DummyClass extends Model implements TranslatableInterface
+{
+    use HasTranslations;
+
+    protected $fillable = [
+        //
+    ];
+
+    public $translatable = [
+        //
+    ];
+
+    public function translations()
+    {
+        return $this->hasMany(DummyClassTranslation::class);
+    }
+
+}
